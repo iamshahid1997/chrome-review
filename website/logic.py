@@ -14,7 +14,7 @@ def incorrect_reviews_df_from_doc(doc):
   def message_cleaning(message):
     Test_punc_removed = [ char for char in message if char not in string.punctuation]
     Test_punc_removed_join = ''.join(Test_punc_removed)
-    all_stopwords = stopwords.words('English')
+    all_stopwords = stopwords.words('english')
     not_stopwords = {'not', 'no','nor', 'but', 'ain', 'aren', "aren't", 'couldn', "couldn't", 'didn', "didn't", 'doesn', "doesn't", 'hadn', "hadn't", 'hasn', "hasn't", 'haven', "haven't", 'isn', "isn't", 'mightn', "mightn't", 'mustn', "mustn't", 'needn', "needn't", 'shan', "shan't", 'shouldn', "shouldn't", 'wasn', "wasn't", 'weren', "weren't", 'won', "won't", 'wouldn', "wouldn't",'don', "don't",} 
     final_stop_words = set([word for word in all_stopwords if word not in not_stopwords])
     Test_punc_removed_join_clean = [ word  for word in Test_punc_removed_join.split() if word.lower() not in final_stop_words]
